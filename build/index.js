@@ -42,7 +42,7 @@ const question = () => {
     term.yesOrNo({ yes: ['y', 'ENTER'], no: ['n', 'N'] }, async (err, result) => {
         if (result) {
             term.clear();
-            await term.drawImage('./assets/43512695.jpg', {
+            await term.drawImage('./assets/sky.png', {
                 shrink: {
                     width: 120,
                     height: 120

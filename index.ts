@@ -26,13 +26,13 @@ const question = () => {
     term.yesOrNo({ yes: ['y', 'ENTER'], no: ['n', 'N'] }, async (err, result) => {
         if (result) {
             term.clear();
-            await term.drawImage('./assets/43512695.jpg', {  
+            await term.drawImage('./assets/sky.png', {  
                 shrink: {
                     width: 120,
                     height: 120
                 }
             });
-            await term.slowTyping('This program free and open-source and can be found at: https://github.com/AlevEve/Dishield\n');
+            await term.slowTyping('This program is free and open-source and can be found at: https://github.com/AlevEve/Dishield\n');
             await term.slowTyping("Credits: @Chinês (AlevEve) - @BancaLab's / 2021");
             
             term.clear();

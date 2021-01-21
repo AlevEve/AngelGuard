@@ -36,7 +36,6 @@ exports.default = () => {
     const app_temp = path.join(AppData, `Local/Discord/app-${version}/resources/tmp`);
     const app_pathfile = path.join(app_temp, 'common', 'paths.js');
     const core_pathfile = path.join(core_temp, 'common', 'paths.js');
-    // Verificando se o Discord está instalado.
     function getVersion(directory) {
         log.info('Verificando instalação do Discord...');
         if (fs_1.existsSync(directory)) {

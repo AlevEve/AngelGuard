@@ -3,7 +3,7 @@ import * as asar from 'asar';
 import * as path from 'path';
 import Logger from './logger';
 
-const log = new Logger()
+const log = new Logger();
 
 export default () => {
 
@@ -19,7 +19,7 @@ const app_temp:      string      = path.join(AppData, `Local/Discord/app-${versi
 const app_pathfile:  string      = path.join(app_temp, 'common', 'paths.js');
 const core_pathfile: string      = path.join(core_temp, 'common', 'paths.js');
 
-// Verificando se o Discord está instalado.
+
 function getVersion (directory: string) {
     log.info('Verificando instalação do Discord...');
     if (existsSync(directory)) {
