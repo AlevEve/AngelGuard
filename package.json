@@ -1,6 +1,6 @@
 {
-  "name": "mizuno",
-  "version": "1.0.0",
+  "name": "AngelGuard",
+  "version": "0.0.1",
   "description": "Discord protection tool.",
   "main": "index.js",
   "pkg": {
