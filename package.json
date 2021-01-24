@@ -1,11 +1,10 @@
 {
   "name": "mizuno",
   "version": "1.0.0",
-  "description": "Discord anti token grabber.",
+  "description": "Discord protection tool.",
   "main": "index.js",
   "pkg": {
     "assets": [
-      "assets/*",
       "modules/*.js",
       "node_modules/terminal-kit/**/*"
     ]
@@ -15,7 +14,6 @@
     "chalk": "^4.1.0",
     "fs-extra": "^9.1.0",
     "terminal-kit": "^1.45.5",
-    "typescript": "^4.1.3"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.6",
@@ -23,6 +21,7 @@
     "@types/terminal-kit": "^1.28.2",
     "@typescript-eslint/eslint-plugin": "^4.14.0",
     "@typescript-eslint/parser": "^4.14.0",
+    "typescript": "^4.1.3",
     "eslint": "^7.18.0"
   },
   "scripts": {
@@ -33,10 +32,10 @@
     "type": "git",
     "url": "git+https://github.com/AlevEve/Mizuno.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "George Santos (AlevEve)",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AlevEve/Mizuno/issues"
+    "url": "https://github.com/AlevEve/AngelGuard/issues"
   },
-  "homepage": "https://github.com/AlevEve/Mizuno#readme"
+  "homepage": "https://github.com/AlevEve/AngelGuard#readme"
 }
