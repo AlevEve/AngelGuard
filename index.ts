@@ -30,7 +30,6 @@ const question = async () => {
 
     term.cyan(`\n\n               Pressione [S ou ENTER] para iniciar e [N] para sair`);
     
-
     term.yesOrNo({ yes: ['S', 'ENTER', 's'], no: ['n', 'N'] }, async (err, result) => {''
         if (result) {
             term.clear();
