@@ -7,8 +7,8 @@ const log = new Logger();
 
 export default async (hashed_path: string): Promise<void> => {
 
-const AppData:       string      = process.env.AppData.replace('Roaming', '');
-const version:       string      = await getVersion(AppData + '/Local/Discord');
+const AppData:       string      = process.env.AppData.replace('/Library/Application Support', '');
+const version:       string      = await getVersion(AppData + '/Discord');
 
 const core_path:     string      = path.join(AppData, `Roaming/${hashed_path}/${version}/modules/discord_desktop_core/core.asar`);
 const app_path:      string      = path.join(AppData, `Local/Discord/app-${version}/resources/app.asar`);
@@ -46,8 +46,8 @@ async function getVersion (directory: string): Promise<string> {
 
 async function patchFiles (): Promise<void> {
     try {
-        asar.extractAll(app_path, path.join(AppData, 'Local', 'Discord', `app-${version}`, 'resources', 'tmp'))
-        asar.extractAll(core_path, path.join(AppData,'Roaming', hashed_path, `${version}`,'modules','discord_desktop_core','tmp'));
+        asar.extractAll(app_path, path.join(AppData, 'Discord', `app-${version}`, 'resources', 'tmp'))
+        asar.extractAll(core_path, path.join(AppData, hashed_path, `${version}`,'modules','discord_desktop_core','tmp'));
     } catch (error) {
         
         if(error.code == 'ENOENT') {
@@ -77,7 +77,7 @@ async function rewriteFiles(_core: string, _app: string): Promise<void> {
     readFile(_app, 'utf-8', async (err, f_content) => {
         await log.proc('Aplicando patch em: "app.asar"');
         await applyPath(f_content, app_temp, app_pathfile, hash, 'app.asar');
-        rename(path.join(AppData, 'Roaming', hashed_path), path.join(AppData, 'Roaming', hash), async (error) => {
+        rename(path.join(AppData, hashed_path), path.join(AppData', hash), async (error) => {
             if (error) {
                 await log.warn(`O patch foi aplicado, mas não foi possível renomear seu Discord no AppData. Faça-o manualmente acessando ${path.join(AppData, 'Roaming')} e renomeando a pasta 'discord' para seu hash: ${hash}`);
                 return;
